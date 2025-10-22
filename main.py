@@ -6,8 +6,7 @@ import os
 
 # --- 1. CONFIGURATION AND FILE DOWNLOADS ---
 
-# Securely access the API key using st.secrets
-# This line will read from your local .streamlit/secrets.toml file
+
 TMDB_API_KEY = st.secrets.get("TMDB_API_KEY", "8265bd1679663a7ea12ac168da84d2e8")
 
 # Function to download files from Dropbox
@@ -24,11 +23,12 @@ def download_file_from_dropbox(url, destination):
                 st.error(f"Error downloading {destination}: {e}")
                 st.stop()
 
-# Your Dropbox URLs with dl=1
-SIMILARITY_URL = "https://www.dropbox.com/scl/fi/e270q7z0hlvev130e81b0/similarity.pkl?rlkey=gbaa2jzmlpimgj3rcb2c14dfc&st=s05epaib&dl=1"
-MOVIE_LIST_URL = "https://www.dropbox.com/scl/fi/bvst4jb32ki33xvdu0il6/movie_list.pkl?rlkey=j278g6cnds56nrs0ul0o4d1ct&st=ywz0kem2&dl=1"
 
-# Trigger the downloads
+SIMILARITY_URL = "https://www.dropbox.com/scl/fi/e270q7z0hlvev130e81b0/similarity.pkl?rlkey=gbaa2jzmlpimgj3rcb2c14dfc&st=w2e6wsiu&dl=1"
+MOVIE_LIST_URL = "https://www.dropbox.com/scl/fi/bvst4jb32ki33xvdu0il6/movie_list.pkl?rlkey=j278g6cnds56nrs0ul0o4d1ct&st=tcgcfmas&dl=1"
+
+
+
 download_file_from_dropbox(SIMILARITY_URL, "similarity.pkl")
 download_file_from_dropbox(MOVIE_LIST_URL, "movie_list.pkl")
 
@@ -42,7 +42,7 @@ except FileNotFoundError:
     st.error("Data files could not be loaded. Please check the Dropbox links.")
     st.stop()
 
-# --- 3. APP UI AND LOGIC (Your original code from here) ---
+# --- 3. APP UI AND LOGIC  ---
 
 st.set_page_config(page_title="MojFlix", layout="wide")
 
@@ -211,7 +211,7 @@ with tab1:
                         display_movie_details(movie_row)
             else:
                 st.info(f"Sorry, no {language_choice_rec} recommendations were found for '{selected_movie_name}'.")
-        else
+        else:
             st.warning("Please select a movie first.")
 
 with tab2:

@@ -11,3 +11,6 @@ __pycache__/
 
 # Streamlit secrets file (IMPORTANT for security)
 .streamlit/secrets.toml
+
+# Large data files
+*.pkl
