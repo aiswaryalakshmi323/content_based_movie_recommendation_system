@@ -44,20 +44,20 @@ except FileNotFoundError:
 
 # --- 3. APP UI AND LOGIC  ---
 
-st.set_page_config(page_title="MojFlix", layout="wide")
+st.set_page_config(page_title="NextFlick", layout="wide")
 
 netflix_theme_css = """
 <style>
-/* Import a font similar to Netflix's font */
+
 @import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap');
-/* Main background */
+
 [data-testid="stAppViewContainer"] {
-    background-color: #141414; /* Netflix's dark background color */
+    background-color: #141414; 
     font-family: 'Helvetica Neue', sans-serif;
 }
-/* Main title styling */
+
 h1 {
-    color: #E50914; /* Netflix Red */
+    color: #E50914; 
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -67,9 +67,9 @@ h3 {
     color: #FFFFFF;
     font-weight: 700;
 }
-/* Button styling */
+
 .stButton>button {
-    background-color: #E50914; /* Netflix Red */
+    background-color: #E50914;
     color: #FFFFFF;
     border: none;
     border-radius: 5px;
@@ -78,19 +78,19 @@ h3 {
     transition: all 0.2s;
 }
 .stButton>button:hover {
-    background-color: #F40612; /* A brighter red on hover */
+    background-color: #F40612; 
     transform: scale(1.05);
 }
-/* Movie Poster Image Styling */
+
 .stImage img {
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .stImage img:hover {
-    transform: scale(1.05); /* Slightly enlarge poster on hover */
-    box-shadow: 0 0 25px rgba(229, 9, 20, 0.7); /* Red glow effect */
+    transform: scale(1.05); 
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.7); 
 }
-/* Movie Caption Styling */
+
 .st-emotion-cache-1l02z68 p {
     color: #FAFAFA;
     font-weight: bold;
@@ -99,7 +99,7 @@ h3 {
 </style>
 """
 st.markdown(netflix_theme_css, unsafe_allow_html=True)
-st.title("MojFlix")
+st.title("NextFlick")
 
 # --- Helper Functions ---
 @st.cache_data
